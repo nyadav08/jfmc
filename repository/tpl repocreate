@@ -1,0 +1,12 @@
+targetName = userInput (
+    type : "STRING",
+    description : "Please provide a target name"
+  )
+localRepository("$targetName") {
+  packageType "maven"
+  description "local maven snapshots repository"
+  includesPattern "com/mycorp/myprod/**"
+  handleSnapshots true
+  handleReleases false
+  checksumPolicyType "server-generated-checksums"
+}
